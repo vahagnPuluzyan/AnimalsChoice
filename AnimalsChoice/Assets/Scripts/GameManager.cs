@@ -45,13 +45,12 @@ public class GameManager : MonoBehaviour
 
     public void SkipGame()
     {
-        if (Advertisement.IsReady())
+        if (Advertisement.isInitialized)
         {
             var showOptions = new ShowOptions();
             showOptions.resultCallback += ResultCallback;
             Advertisement.Show("Rewarded_Android", showOptions);
         }
-
     }
 
     public void GameOver()
